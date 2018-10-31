@@ -1,0 +1,44 @@
+div.feedbackList{
+	width:1226px;
+	overflow:hidden;
+	margin:30px auto;
+	background:#fff;
+}
+div.feedbackList>div.feedbacks{
+	width:960px;
+	overflow:hidden;
+	margin:30px auto;
+}
+div.feedbackList>div.feedbacks>p.feedback{
+	width: 477px;
+    height: 130px;
+    border: 1px dashed #dddddd;
+    float:left;
+    line-height:130px;
+    margin-top:15px;
+    text-indent:30px;
+}
+div.feedbackList>div.feedbacks>p.feedback>a{
+	font-size:14px;
+	color:#000;
+}
+div.paging{
+	width:954px;
+	overflow:hidden;
+	height:100px;
+	margin-left:129px;
+}
+div.paging>a>span{
+	display:inline-block;
+	padding:3px 15px;
+	border:1px solid #ccc;
+	border-radius:3px;
+	font-size:14px;
+	margin:30px 2px;
+	color:#000;
+}
+div.paging>a>span.active{
+	background:red;
+	color:#fff;
+	border-color:red;
+}

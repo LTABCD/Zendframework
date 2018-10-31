@@ -1,0 +1,100 @@
+/*轮播图部分*/
+div.header-banner{
+	width:100%;
+	overflow:hidden;
+	position:relative;
+}
+div.header-banner>.hind-banner{
+	overflow:hidden;
+	position:relative;
+	left:-100%;
+}
+div.header-banner>.hind-banner>a{
+	cursor:default;
+}
+div.header-banner>.hind-banner>a>img{
+	float:left;
+}
+div.header-banner>.banner-circle{
+	width:100%;
+	overflow:hidden;
+	position:absolute;
+	left:0px;
+	bottom:32px;
+	text-align:center;
+}
+div.header-banner>.banner-circle>li{
+	width:10px;
+	height:18px;
+	display:inline-block;
+	margin-left:20px;
+	cursor:pointer;
+	overflow:hidden;
+}
+div.header-banner>.banner-circle>li>img{
+	width:100%;
+}
+div.header-banner>.left{
+	max-width:50px;
+	position:absolute;
+	left:3%;
+	top:45%;
+	width:10vw;
+}
+div.header-banner>.right{
+	width:50px;
+	position:absolute;
+	right:3%;
+	top:45%;
+}
+div.header-banner>.display{
+	opacity:0;
+	filter:alpha(opacity=0);
+}
+div.header-banner>img{
+	cursor:pointer;
+}
+
+
+@media only screen and (max-width:1025px) {
+	div.header-banner{
+		width:100vw;
+		overflow:hidden;
+		position:relative;
+	}
+	div.header-banner ul.hind-banner{
+		position:relative;
+		list-style:none;
+		width:600vw;
+		height:50vw;
+		transform:translateX(-100vw) translateY(0px);
+		left:0px;
+	}
+	div.header-banner ul.hind-banner>a>img{
+		width:100vw;
+		float:left;
+	}
+	div.header-banner>.banner-circle{
+		width:100%;
+		overflow:hidden;
+		position:absolute;
+		left:0px;
+		bottom:3vw;
+		text-align:center;
+	}
+	div.header-banner>.banner-circle>li{
+		width:5px;
+		height:5px;
+		margin-left:3vw;
+	}
+	div.header-banner>.banner-circle>li>img{
+		width:100%;
+	}
+	div.header-banner>.left{
+		display:none;
+	}
+	div.header-banner>.right{
+		display:none;
+	}
+	
+}

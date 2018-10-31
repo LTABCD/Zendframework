@@ -1,0 +1,69 @@
+div.section{
+	width:1226px;
+	overflow:hidden;
+	margin:30px auto;
+	background:#fff;
+}
+div.dynamicList{
+	width:477px;
+	float:left;
+	overflow:hidden;
+	margin-left:90px;
+	margin-top:60px;
+	border-bottom:1px solid #ccc;
+	cursor:pointer;
+}
+div.none{
+	border:none;
+}
+div.dynamicList>img{
+	width:147px;
+	line-height:147px;
+	height:auto;
+	display:block;
+	float:left;
+}
+div.dynamicList>div.dynamicList_right{
+	width:300px;
+	float:left;
+	overflow:hidden;
+	position:relative;
+	padding:10px 0px 10px 20px;
+}
+div.dynamicList>.dynamicList_right>p{
+	font-family:"黑体";
+	width:100%;
+	font-size:16px;
+	height:69px;
+	overflow:hidden;
+	font-weight:600;
+	color:#333;
+}
+
+div.dynamicList>.dynamicList_right>p.time{
+	font-family:"微软雅黑";
+	font-size:13px;
+	color:#ccc;
+	height:40px;
+}
+div.paging{
+	width:954px;
+	overflow:hidden;
+	height:100px;
+	margin-left:90px;
+}
+div.paging>a>span{
+	display:inline-block;
+	padding:3px 15px;
+	border:1px solid #ccc;
+	border-radius:3px;
+	font-size:14px;
+	margin:30px 2px;
+	color:#000;
+	cursor:pointer;
+}
+div.paging>a>span.active{
+	background:red;
+	color:#fff;
+	border-color:red;
+}

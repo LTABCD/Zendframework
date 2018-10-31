@@ -1,0 +1,10 @@
+div.section{
+	width:1226px;
+	margin:30px auto;
+	overflow: hidden;;
+	background:#fff;
+	padding:30px;
+}
+div.section>iframe{
+	width:100%;
+}

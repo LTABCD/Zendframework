@@ -1,0 +1,23 @@
+/*视频部分*/
+section{
+	width:100%;
+	position:relative;
+	overflow:hidden;
+}
+p.title1{
+	width:100%;
+	text-align:center;
+	font-size:21px;
+	font-family:"Times New Roman";
+	padding:15px;
+	background:#fff;	
+}
+div.video{
+	width:100%;
+	height:auto;
+	overflow:hidden;
+	position:relative;
+}
+div.video>a>img.poster{
+	width:100%;
+}

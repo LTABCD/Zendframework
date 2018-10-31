@@ -1,0 +1,21 @@
+div.section{
+	width:1226px;
+	background:#fff;
+	overflow:hidden;
+	margin:0 auto;
+	position:relative;
+	padding:40px 0px
+}
+div.imgList{
+	width:974px;
+	position:relative;
+	overflow:hidden;
+	margin:0 auto;
+}
+div.imgList>img{
+	width:482px;
+	position:relative;
+	overflow:hidden;
+	margin:0 auto;
+	margin-right:3px;
+}
