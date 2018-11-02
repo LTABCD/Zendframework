@@ -137,12 +137,18 @@ $(function(){
 		//页面切换效果
 		var nowPage=$("#nowPage").text();
 		var sumPage=$("#sumPage").text();
-		var page_container=$("div.map_container>div.map_container_left>p.page");
+		
 		var prev=$("#prev");
 		var next=$("#next");
-		if(sumPage<=1){
-			page_container.css("display","none");
+		//判断页数是否大于1页
+		function judgePage(){
+			var page_container=$("div.map_container>div.map_container_left>p.page");
+			if(sumPage<=1){
+				page_container.css("display","none");
+			}
 		}
+		judgePage();
+		
 		//下一页
 		next.on("click",function(){
 			if(nowPage>=sumPage){
@@ -202,11 +208,24 @@ $(function(){
 		
 		
 		//搜索功能
+		var valss;
 		ie3.on("click",function(){
-			toCity(ie2.val());
+			valss=$.trim(ie2.val());
+			if(valss==''){
+				alert('请输入文字');
+				return;
+			}
+			valss=valss.replace(/\s+/gi,'');
+			toCity(valss);
 		});
 		ie4.on('click',function(){
-			toCity(ie2.val());
+			valss=$.trim(ie2.val());
+			if(valss==''){
+				alert('请输入文字');
+				return;
+			}
+			valss=valss.replace(/\s+/gi,'');
+			toCity(valss);
 		})
 		
 		//搜索城市
@@ -214,14 +233,18 @@ $(function(){
 			$.ajax({
 				url:"/experience/like",
 				type:"post",
-				data:{"cityName":cityName},
+				data:{"cityName":valss},
 				success:function(data){
-					console.log($.parseJSON(data));
-//					var json_list=$.parseJSON(data);
-//					createLi(json_list);
-//					getList();
-//					tap();
-//					toggle();
+					if(!data){
+						alert('搜索内容不存在');
+					}else{
+						var json_list=$.parseJSON(data);
+						createLi(json_list);
+						getList();
+						tap();
+						toggle();
+						judgePage();
+					}
 				},
 				error:function(){
 					console.log('error');

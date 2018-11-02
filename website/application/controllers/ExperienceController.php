@@ -104,13 +104,16 @@
 			$mysqli=$_SESSION['mysqli'];
 			
 			$cityName=$_POST['cityName'];
+			$cityName=trim($cityName);
+			$cityName=str_replace(' ','',$cityName);
+			if(empty($cityName)){
+				exit();
+			}
 			
-			$res=$mysqli->likeOperation($city);
+			$res=$mysqli->likeOperation($cityName);
 			if(!$res){
 				echo false;
 			}else{
-//				echo "<pre/>";
-//				print_r($res);
 				echo json_encode($res);
 			}
 			exit();
