@@ -27,70 +27,91 @@ $(function(){
 	var b_version=navigator.appVersion;
 	var version=b_version.split(";");
 	var ver=version[1];
-	if(ver==" MSIE 7.0"){
-		var circle=$("div.container-fluid div.header-banner>.banner-circle>li");
-		var foot_div=$("div.foot>div");
-		var search=$("#search");
-		function inline(obj){
-			var lens=obj.length;
-			for(var i=0;i<lens;i++){
-				obj.eq(i).css("display","inline");
-			}
-		}
-		inline(circle);
-		inline(foot_div);
-		search.css("right","30px");
-	}
-	if(ver==" MSIE 7.0"||ver==" MSIE 8.0"){
-		var input_button=$(".input_button");
-		input_button.css("height","52px");
-	}
 	
-	//搜索按钮的移入移出效果
+	
+	
 	var search_button=$(".input_button");
-	var img=$("div.nav>div.nav_search>img");
-	function over(){
-		search_button.css("background","red");
-		search_button.css("border-color","red");
-		img.attr("src","/img/search2.png");
-	}
-	search_button.on("mouseover",over);
-	search_button.on("mouseout",function(){
-		search_button.css("background","transparent");
-		search_button.css("border-color","#ccc");
-		img.attr("src","/img/search1.png");
-	})
-	img.on("mouseover",over);
-	
-	//搜索框边框变色效果
+	var img=$(".search");
 	var input_search=$(".input_search");
-	input_search.on('focus',function(){
-		$(this).css("border-color","red");
-		search_button.css("border-color","red");
-	})
-	input_search.on('blur',function(){
-		$(this).css("border-color","#ccc");
-		search_button.css("border-color","#ccc");
-	})
-	
-	//搜索框边框移入移出变色效果
-	function overColor(){
-		input_search.css("border-color","#b0b0b0");
-		search_button.css("border-color","#b0b0b0");
+	for(var i=0;i<input_search.length;i++){
+		(function(i){
+		
+			if(ver==" MSIE 7.0"){
+				var circle=$("div.container-fluid div.header-banner>.banner-circle>li");
+				var foot_div=$("div.foot>div");
+				function inline(obj){
+					var lens=obj.length;
+					for(var j=0;j<lens;j++){
+						obj.eq(j).css("display","inline");
+					}
+				}
+				inline(circle);
+				inline(foot_div);
+				img.eq(i).css("right","30px");
+			}
+			if(ver==" MSIE 7.0"||ver==" MSIE 8.0"){
+				search_button.eq(i).css("height","52px");
+			}
+		
+		
+		
+			//搜索按钮的移入移出效果
+			function over(){
+				search_button.eq(i).css("background","red");
+				search_button.eq(i).css("border-color","red");
+				img.eq(i).attr("src","/img/search2.png");
+			}
+			search_button.eq(i).on("mouseover",over);
+			search_button.eq(i).on("mouseout",function(){
+				$(this).css("background","transparent");
+				if(bool){
+					search_button.eq(i).css("border-color","#ccc");
+				}
+				img.eq(i).attr("src","/img/search1.png");
+			})
+			img.eq(i).on("mouseover",over);
+			search_button.eq(i).css("cursor","pointer");
+			img.eq(i).css("cursor","pointer");
+			//搜索框边框变色效果
+			var bool=true;
+			input_search.eq(i).on('focus',function(){
+				bool=false;
+				$(this).css("border-color","red");
+				search_button.eq(i).css("border-color","red");
+			})
+			input_search.eq(i).on('blur',function(){
+				bool=true;
+				$(this).css("border-color","#ccc");
+				search_button.eq(i).css("border-color","#ccc");
+			})
+			
+			//搜索框边框移入移出变色效果
+			function overColor(){
+				if(bool){
+					input_search.eq(i).css("border-color","#b0b0b0");
+					search_button.eq(i).css("border-color","#b0b0b0");
+				}
+			}
+			function overColor1(){
+				if(bool){
+					input_search.eq(i).css("border-color","#b0b0b0");
+					search_button.eq(i).css("border-color","red");
+				}
+				
+			}
+			function outColor(){
+				if(bool){
+					input_search.eq(i).css("border-color","#e0e0e0");
+					search_button.eq(i).css("border-color","#e0e0e0");
+				}
+			}
+			input_search.eq(i).on("mouseover",overColor);
+			search_button.eq(i).on("mouseover",overColor1);
+			input_search.eq(i).on("mouseout",outColor);
+			search_button.eq(i).on("mouseout",outColor);
+			img.eq(i).on("mouseover",overColor1);
+		})(i);
 	}
-	function overColor1(){
-		input_search.css("border-color","#b0b0b0");
-		search_button.css("border-color","red");
-	}
-	function outColor(){
-		input_search.css("border-color","#e0e0e0");
-		search_button.css("border-color","#e0e0e0");
-	}
-	input_search.on("mouseover",overColor);
-	search_button.on("mouseover",overColor1);
-	input_search.on("mouseout",outColor);
-	search_button.on("mouseout",outColor);
-	img.on("mouseover",overColor1);
 	
 	
 	//底部链接移入移出效果

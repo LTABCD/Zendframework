@@ -113,35 +113,6 @@ $(function(){
 	for(var i=0;i<select.length;i++){
 		(function(i){
 			span.eq(i).text(select.eq(i).val());
-			select.eq(i).on("change",function(){
-				span.eq(i).text($(this).val());
-				$.ajax({
-					url:"/studio/city",
-					type:"post",
-					data:{"name":1},
-					dataType:"json",
-					success:function(data){
-						console.log(data);
-					},
-					error:function(){
-						console.log(err);
-					}
-				})
-			})
 		})(i)
 	}
-	
-	var jsonStudio=[{
-		"name":"大卫博士濮阳市授权体验店",
-		"detailed_address":"河南省濮阳市华龙区中华大道中华大道中华大道中华大道中华大道中华大道中华大道",
-		"tel":"0371-1234567 18625588667"
-	}];
-	
-	//自动生成工作室列表
-	var addressList=$("div.address>div.address_container>.addressList");
-	for(var i=0;i<jsonStudio.length;i++){
-		var html="<li><p>河南<a>"+jsonStudio[i]['name']+"</a></p><p>"+jsonStudio[i]['detailed_address']+"</p><p>电话："+jsonStudio[i]['tel']+"</p></li>";
-		addressList.append(html);
-	}
-	
 })

@@ -10,6 +10,9 @@
 			                 );
 			
 			$db = Zend_Db::factory('PDO_MYSQL', $params);
+			
+			require_once 'Zend/Db/Table.php';
+			Zend_Db_Table::setDefaultAdapter($db);
 
 		}
 	}

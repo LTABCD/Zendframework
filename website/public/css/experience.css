@@ -1,3 +1,26 @@
+/*IE*/
+#ie1{
+	float:left;
+	position:relative;
+	top:4px;
+}
+#ie2{
+	float:left;
+	height:36px;
+	
+}
+#ie3{
+	float:left;
+	height:36px !important;
+	line-height:36px;
+	left:0px;
+}
+#ie4{
+	position:absolute;
+	top:8px;
+	left:185px;
+}
+
 div.address_select>span>span{
 	color:red;
 	margin-right:5px;
@@ -8,6 +31,44 @@ div.address_select>span>img{
 	position:relative;
 	top:-16px;
 	left:-16px;
+}
+div.address>div.address_container>div.address_select>div.searchs{
+	float: right;
+    position: relative;
+    top: -15px;
+}
+div.address>div.address_container>div.address_select>div.searchs>.input_search{
+	width:170px;
+	height:36px;
+	border:1px solid #e0e0e0;
+	border-right:0px;
+	font-size:14px;
+	text-indent:15px;
+	vertical-align: middle;
+	outline:none;
+	line-height:36px;
+}
+div.address>div.address_container>div.address_select>div.searchs>.input_button{
+	border:none;
+	width:52px;
+	height:36px;
+	outline:0;
+	border:1px solid #e0e0e0;
+	background:transparent;
+	vertical-align: middle;
+	font-size:14px;
+	box-sizing:border-box;
+	outline-width:0px;
+	outline-style:none;
+	outline-color:invert;
+	position: relative;
+    left: -4px;
+}
+div.address>div.address_container>div.address_select>div.searchs>img{
+	position:absolute;
+	width:24px;
+	top:25px;
+	right:17px;
 }
 div.map_container{
 	width:1226px;
@@ -23,6 +84,7 @@ div.map_container>div.map_container_left{
 	overflow:hidden;
 	position:relative;
 	float:left;
+	height:555px;
 }
 div.map_container>div.map_container_left>ul{
 	list-style:none;
@@ -88,6 +150,8 @@ div.map_container>div.map_container_left>p.page{
 	width:325px;
 	height:48px;
 	line-height:48px;
+	position: absolute;
+    bottom: 25px;
 }
 div.map_container>div.map_container_left>p.page>a{
 	float:left;
@@ -182,3 +246,7 @@ div.infowindow>div.infowindow_right>div.infowindow_right_list>p.infowindow_right
 #type{
 	padding:0px;
 }
+
+
+
+
